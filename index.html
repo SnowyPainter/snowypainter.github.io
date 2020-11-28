@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민우의 서재</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1 class="title">Contact Me</h1>
+        <div class="body center">
+            <p>Mail</p>
+            <p><a href="snowypainter@gmail.com">snowypainter@gmail.com</a></p>
+            <p>Github</p>
+            <p><a href="https://github.com/SnowyPainter">Minwoo Yu's Github</a></p>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">Biography - Current</h1>
+        <div class="body center" id="bio">
+            <p>Born in 2006 ... <span id="nowtime"></span>sec</p>
+            <span class="downarrow">&#8595;</span>
+            <p>My blog. <a href="https://manufacture.tistory.com/">https://manufacture.tistory.com</a></p>
+            <span class="downarrow">&#8595;</span>
+            <p>Programming</p>
+            <p>C#, Go, etc ...</p>
+            <span class="downarrow">&#8595;</span>
+            <p>Writings ... </p>
+            <ul>
+                <li>
+                    <p><i>In-depth about number of cases and apply questions</i></p>
+                </li>
+                <li>
+                    <p><i>Criticism of Civil Morals of Coveting Northern Europe Welfare</i></p>
+                </li>
+                <li>
+                    <p><i>Basis of Expressing an opinion and About the Public Opinion</i></p>
+                </li>
+            </ul>
+            <span class="downarrow">&#8595;</span>
+            <p>Me now 😀</p>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">Projects - Current</h1>
+        <div class="body">
+            <ul>
+                <li>
+                    <p><a href="https://github.com/SnowyPainter/Harbor">Harbor</a></p>
+                    <p>Library for data Analysis and Management</p>
+                </li>
+                <li>
+                    <p><a href="https://github.com/SnowyPainter/Perfume">Perfume</a></p>
+                    <p>Quick use & simple TUI library</p>
+                </li>
+                <li>
+                    <p><a href="https://github.com/SnowyPainter/Solar-System">Solar System</a></p>
+                    <p>Easy solar system visual for education</p>
+                </li>
+            </ul>
+            <p>... <a href="https://github.com/SnowyPainter?tab=repositories">And More! 😛</a></p>
+        </div>
+    </div>
+    <script>
+        function setNowtime() {
+            const now = new Date();
+            const format = now.getFullYear() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            document.getElementById("nowtime").innerText = format
+        }
+
+        setNowtime()
+        let timerId = setInterval(setNowtime, 1000);
+    </script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
