@@ -69,7 +69,13 @@
                         let allThings = document.getElementsByClassName("beaker")[0].getElementsByTagName("div")
                         let densities = []
                         for (let j = 0; j < allThings.length; j++) {
-                            densities.push(allThings[j].getElementsByClassName("d")[0].value)
+                            const val = allThings[j].getElementsByClassName("d")[0].value;
+                            if (densities.includes(val)) {
+                                alert("중복된 밀도를 제거해주세요.");
+                                return;
+                            }
+
+                            densities.push(val)
                         }
                         densities.sort((a, b) => {
                             return a - b
