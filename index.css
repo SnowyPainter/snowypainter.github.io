@@ -96,6 +96,10 @@ a:hover {
     transition: max-height 0.5s;
 }
 
+.card .body img {
+    max-width: 80%;
+}
+
 .card .center {
     text-align: center;
 }
@@ -125,6 +129,9 @@ a:hover {
     }
     .card .body {
         font-size: 17px;
+    }
+    .card .body img {
+        max-width: 95%;
     }
     .card .downarrow {
         font-size: 25px;
