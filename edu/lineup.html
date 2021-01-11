@@ -86,9 +86,9 @@
                     const forzero = (elements) => {
                         for (let i = 0; i < elements.length; i++) {
                             let copyElements = Array.from(elements);
-                            createNode(copyElements[i].value)
-                            copyElements.splice(i, 1)
-                            for (let j = 0; j < copyElements; j++) {
+                            createNode(copyElements[i].value);
+                            copyElements.splice(i, 1);
+                            for (let j = 0; j < copyElements.length; j++) {
                                 createNode(copyElements[j].value)
                             }
                             forzero(copyElements)

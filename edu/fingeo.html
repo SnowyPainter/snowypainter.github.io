@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유한 기하학</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1 class="title">정의</h1>
+        <div class="body center">
+            <p>열과 행으로 이루어지고 끝이 정해진 어떤 차원에서 유한한 범위를 가진 계이다.</p>
+            <p>예시로 넓이가 30인 평면 정사각형 내부에서의 기하학을 들 수 있다.</p>
+            <p>선일때 다른 방향이라면 같은 길이라도 합동이 될 수 없다.</p>
+            <p>같은 길이라면, 그 시작 점과 끝 점의 위치가 (같은 방향으로 평행한다) 달라도 합동이다.</p>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">실습</h1>
+        <div class="body center">
+            <style>
+                .alphabet {
+                    font-size: 30px;
+                    font-weight: bold;
+                    margin-left: 13px;
+                    margin-right: 13px;
+                    cursor: pointer;
+                    -webkit-touch-callout: none;
+                    /* iOS Safari */
+                    -webkit-user-select: none;
+                    /* Safari */
+                    -khtml-user-select: none;
+                    /* Konqueror HTML */
+                    -moz-user-select: none;
+                    /* Old versions of Firefox */
+                    -ms-user-select: none;
+                    /* Internet Explorer/Edge */
+                    user-select: none;
+                }
+                
+                #geo {
+                    margin: auto;
+                    margin-top: 30px;
+                    padding: 10px;
+                    border-radius: 20px;
+                    width: fit-content;
+                    background-color: rgb(68, 126, 180);
+                }
+            </style>
+            <p>알파벳 A,B,C,D,E로 열,행에서 중복되지 않게 배열한 행렬에서의 유한기하학</p>
+            <p>
+                <div id="geo">
+                </div>
+                <div id="list">
+
+                </div>
+            </p>
+            <script>
+                let selA = undefined;
+                let selB = undefined;
+
+                function selectPoint(point) {
+                    if (point == selA) return;
+
+                    if (selA != undefined) {
+                        selB = point;
+
+                        displaySelection(selA, selB)
+                        selA = undefined;
+                        selB = undefined;
+                        return;
+                    }
+                    selA = point;
+                }
+
+                function displaySelection(a, b) {
+                    let selection = document.createElement("p")
+                    selection.innerText = "(" + a.innerText + ", " + b.innerText + ")"
+                    document.getElementById("list").appendChild(selection)
+                }
+
+                const alphabets = ["A", "B", "C", "D", "E"]
+                let geo = document.getElementById("geo")
+                for (let i = 0; i < 5; i++) {
+                    let row = document.createElement("div")
+                    for (let j = 0; j < 5; j++) {
+                        let alphabet = document.createElement("span")
+                        alphabet.addEventListener("click", () => selectPoint(alphabet))
+                        alphabet.classList.add("alphabet")
+                        alphabet.innerText = alphabets[j + i >= alphabets.length ? j + i - alphabets.length : j + i]
+                        row.appendChild(alphabet)
+                    }
+                    geo.appendChild(row)
+                }
+            </script>
+        </div>
+    </div>
+    <script src="../menu.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
