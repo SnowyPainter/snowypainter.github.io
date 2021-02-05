@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리말의 모음 체계</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1 class="title">모음 체계</h1>
+        <div class="body center">
+            <p>음운에 있어서 모음과 자음으로 구분될때, 모음입니다.</p>
+            <p>혀의 앞/뒤 위치에 따른 전설/후설 모음</p>
+            <p>혀의 높이에 따른 고/중/저 모음</p>
+            <p>입술모양에 따른 평순/원순 모음</p>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">시각화</h1>
+        <div class="body center">
+            <p><img src="ex1.png"></p>
+            <p><img src="ex2.png"></p>
+            <p>혀의 위치는 생략되었다.</p>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">시각화2 상호작용</h1>
+        <div class="body center">
+            <input type="radio" id="a" name="pos" value="전설" checked>
+            <label for="a">혀끝이 앞에</label>
+            <input type="radio" id="b" name="pos" value="후설">
+            <label for="b">혀끝이 중간에</label>
+            <br>
+            <input type="radio" id="a" name="ms" value="0" checked>
+            <label for="a">'아' 모양</label>
+            <input type="radio" id="b" name="ms" value="1">
+            <label for="b">입술 동그랗게</label>
+
+            <br>
+            <button onclick="ok()">확인</button>
+            <p id="result"></p>
+            <script>
+                const vowel = {
+                    "전설": [
+                        //내부 0~2 고 중 저
+                        ["ㅣ", "ㅔ", "ㅐ"], //평순
+                        ["ㅟ", "ㅚ"], //원순
+                    ],
+                    "후설": [
+                        ["ㅡ", "ㅓ", "ㅏ"],
+                        ["ㅜ", "ㅗ"]
+                    ]
+                }
+                const tmbStr = ["상", "중", "하"]
+
+                function ok() {
+                    const pos = document.querySelector('input[name="pos"]:checked').value;
+                    const ms = document.querySelector('input[name="ms"]:checked').value;
+
+                    const tmb = vowel[pos][ms]
+                    let v = document.createElement("div")
+
+                    for (let i = 0; i < 3; i++) {
+                        let m = document.createElement("p")
+                        if (tmb[i] == undefined) tmb[i] = "없다"
+                        m.innerText = tmbStr[i] + "모음 : " + tmb[i]
+                        v.append(m)
+                    }
+                    document.getElementById("result").innerHTML = v.innerHTML
+                }
+            </script>
+        </div>
+    </div>
+    </div>
+    <script src="../menu.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
