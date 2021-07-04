@@ -11,11 +11,19 @@
         color:white;
         background-color: #1588ed;
     }
+    #sts p {
+        background-color: white;
+        font-size: 25px;
+    }
 </style>
 <h1>Semester 1 Final Eng Test</h1>
 <div>
     <h2 id="st1"></h2>
     <h2 id="st2"></h2>
+
+    <p id="sts">
+
+    </p>
 </div>
 <script>
     const sts2 = [
@@ -71,6 +79,18 @@
         "Bring a wetsuit for deep sea diving",
         "The movie has become famous worldwide"
     ]
+    function getAst(str) {
+        let p = document.createElement("p");
+        p.innerText = str;
+        return p;
+    }
+    let sts = document.getElementById("sts");
+    for(let i = 0;i < sts2.length;i++) {
+        sts.appendChild(getAst(sts2[i]))
+    }
+    for(let i = 0;i < sts4.length;i++) {
+        sts.appendChild(getAst(sts4[i]))
+    }
 
     document.getElementById("st1").innerText = sts2[Math.floor(Math.random() * sts2.length)];
     document.getElementById("st2").innerText = sts4[Math.floor(Math.random() * sts4.length)];
