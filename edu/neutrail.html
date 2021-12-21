@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중화 적정</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1 class="title">중화적정 실험</h1>
+        <div class="body center">
+            중화적정 실험을 통해서 우리는 어떤 용액의 몰 농도를 구할 수 있다.</br>
+            중화 적정이니 표준용액이 산이라면 용액은 염기여야 하겠다.</br>
+            그 방법으로
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>n</mi>
+                <mi>M</mi>
+                <mi>V</mi>
+                <mo>=</mo>
+                <msup>
+                  <mi>n</mi>
+                  <mo data-mjx-alternate="1">&#x2032;</mo>
+                </msup>
+                <msup>
+                  <mi>M</mi>
+                  <mo data-mjx-alternate="1">&#x2032;</mo>
+                </msup>
+                <msup>
+                  <mi>V</mi>
+                  <mo data-mjx-alternate="1">&#x2032;</mo>
+                </msup>
+            </math>
+            위 공식을 사용할 수 있다.</br>
+            그 실험은 차례대로 2가지 행위의 반복으로 이루어진다.
+            <ol>
+                <li>표준 용액 일정량 투입</li>
+                <li>지시약 투입으로 중화 확인</li>
+            </ol>
+            마침내 지시약 색이 pH 7구간의 색으로 변한다면 지금까지 넣은 표준용액의 몰 양과 구하고자 하는 용액의 몰농도를 이용한 몰 양 계산식으로 방정식을 만들어 푼다.
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="title">실습</h1>
+        <p>실습은 NaOH 표준용액과 몰농도를 모르는 HCl 용액으로 진행하겠다.</p>
+        <p>HCl은 1 Liter, 지시약은 BTB를 사용하겠다.</p>
+        <p>HCl, NaOH 모두 산, 염기 가수는 1이므로 MV = M'V' 공식을 사용하게 된다.</p>
+        <p>올리브색으로 변하면 중화적정된 것 이다.</p>
+        <div class="body">
+            <style>
+                input {
+                    width: 100px;
+                }
+            </style>
+            <p>HCl 1L, HCL 분자량은 36</p>
+            NaOH
+            <input placeholder="표준 용액 농도" id="std_d"/>%
+            <input placeholder="떨어트릴 양" id="std_g"/>g
+            <button onclick="insert()">투입</button>
+            <p>현재까지 <span id="mol_NaOH"></span>mol NaOH 투입됨</p>
+            <p>BTB 색 : <span id="color_btb">노란색</span></p>
+            <script>
+                const hiddenHclM = 0.5
+                const naoh_weight = 40
+                let sum_of_naoh_mol = 0
+                function insert() {
+                    const std_d = document.getElementById("std_d").value
+                    const std_g = document.getElementById("std_g").value
+                    const naoh_mol = (std_g * (std_d / 100)) / naoh_weight
+                    sum_of_naoh_mol += naoh_mol
+                    
+                    document.getElementById("mol_NaOH").innerText = sum_of_naoh_mol;
+                    
+                    if(hiddenHclM - 0.2 < sum_of_naoh_mol && hiddenHclM + 0.2 > sum_of_naoh_mol) {
+                        document.getElementById("color_btb").innerText = "올리브색"
+                        alert("HCl 1L 의 mol 농도는 "+sum_of_naoh_mol+" M 였습니다.")
+                    }
+                    else if(hiddenHclM + 0.2 <= sum_of_naoh_mol) {
+                        document.getElementById("color_btb").innerText = "청색"
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    <script src="../menu.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
