@@ -137,3 +137,16 @@ a:hover {
         font-size: 25px;
     }
 }
+
+.overflow-x {
+    overflow-x:scroll;
+    display: flex;
+}
+.c {
+    margin-left: 10px;
+    padding: 30px;
+    border: solid 1px white;
+}
+.c .word {
+    margin: 5px;
+}

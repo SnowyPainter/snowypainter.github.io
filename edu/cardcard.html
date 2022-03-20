@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어 외우기</title>
+</head>
+
+<body>
+    <div class="card">
+        <p>현재 첫번째 행 제목, 1열 단어, 2열 뜻 만 지원합니다.</p>
+        <h1 class="title">파일 추가</h1>
+        <input id="wordfile" type="file" accept=".csv">
+    </div>
+    <div class="card">
+        <h1 class="title">카드</h1>
+        <div class="body">
+            <div id="cardlist" class="overflow-x">
+            </div>
+        </div>
+    </div>
+    <script>
+        const wordfile = document.getElementById("wordfile");
+        let cardlist = document.getElementById("cardlist")
+        function _createCard(word, meaning) {
+            let c = document.createElement("div")
+            let w = document.createElement("h3")
+            let m = document.createElement("p")
+            c.classList.add("c")
+            w.classList.add("word")
+            m.classList.add("meaning")
+            w.innerText = word
+            m.innerText = meaning
+            c.appendChild(w)
+            c.appendChild(m)
+            return c
+        }
+        const header = 0;
+        wordfile.addEventListener("change", (e) => {
+            let file = e.target.files[0]
+            if(file) {
+                let reader = new FileReader();
+                reader.readAsText(file, "UTF-8");
+                reader.onload = (evt) => {
+                    let text = evt.target.result.split("\n")
+                    text.splice(header, 1)
+                    console.log(text)
+                    text.forEach(element => {
+                        element = element.replace(",,\r", "").split(',')
+                        const word = element[0];
+                        const meaning = element[1];
+                        cardlist.appendChild(_createCard(word, meaning))
+                    });
+                }
+            }
+        })
+    </script>
+    <script src="../menu.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
