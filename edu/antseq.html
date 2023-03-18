@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보 수업 개미수열</title>
+</head>
+
+<body>
+    <div class="card">
+        <h1 class="title">개미수열 만들기</h1>
+        <p>개미수열은 베르나르 베르베르의 소설에 등장한다.</p>
+        <p>읽고 말하기 수열이라고도 하며, 반복길이부호화 알고리즘에서 비슷한 원리를 이용한다.</p>
+        <p>정보 출처 : 위키피디아</p>
+    </div>
+    <div class="card">
+        <h1 class="title">개미 수열 알고리즘</h1>
+        <div class="body">
+            <input type="text" id="seqt" placeholder="수열(띄어쓰기)" />
+            <input type="number" id="d" placeholder="깊이" onchange="
+                create(document.getElementById('seqt').value, this.value)
+            " />
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        ants = (seq, n, ci = 0) => {
+            if (ci == n - 1) return seq.trim()
+            c = 1; tmp = ""
+            seq.trim().split(" ").map((e, i, arr) => arr[i] != arr[i + 1] ? (() => { tmp += e + " " + c + " "; c = 1 })() : c++)
+            return ants(tmp, n, ci + 1)
+        }
+        function create(seq, d) {
+            document.getElementById("result").innerText = ants(seq, d)
+        }
+    </script>
+    <script src="../menu.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
