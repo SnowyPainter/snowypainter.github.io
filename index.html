@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minwoo Yu</title>
+    <title>LINEARI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="card">
-        <h1 class="title">Contact Me</h1>
-        <div class="body center">
-            <p>Mail</p>
-            <p><a href="snowypainter@gmail.com">snowypainter@gmail.com</a></p>
-            <p>Github</p>
-            <p><a href="https://github.com/SnowyPainter">Github</a></p>
-        </div>
-    </div>
-    <div class="card">
-        <h1 class="title">연수 자동 넘기기 프로그램 다운로드</h1>
-        <div class="body center">
-            <p>오픈 소스 프로그램입니다.</p>
-            <p><a href="https://github.com/SnowyPainter/Zerg">소스 코드</a></p>
-            <p><button><a href="https://github.com/SnowyPainter/Zerg/releases/download/1/main.zip">다운로드</a></button></p>
-        </div>
-    </div>
-    </div>
-    <div class="card">
-        <h1 class="title">Where is my CJ Delivery?</h1>
-        <div class="body center">
-            <h1><a href="./whereismydelivery.html">Show</a></h1>
-        </div>
-    </div>
-    <div class="card">
-        <h1 class="title">Edu</h1>
-        <div class="body center">
-            <h1><a href="./edu/index.html">Lets edu</a></h1>
-        </div>
-    </div>
-    <script src="./style.js"></script>
-</body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">LINEARI</div>
+            <ul class="nav-links">
+                <li><a href="./warn.html">Warning</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button"><a href="./quant_services.html">Get Started</a></button>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Lineari</h1>
+                <p>We provide financial AI services.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>We are R&D group about financial AIs.</p>
+            <p>We research KRX market.</p>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Financial AI</h3>
+                    <img src="./resources/compound decline.png" style="width: 30%;margin:auto;margin-bottom:20px;"/>
+                    <p>Customize your own financial AI.</p>
+                </div>
+                <div class="card">
+                    <h3>Research</h3>
+                    <p>Find stocks' and goods' relations with market.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contacts">
+            <h2>Contact Us</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Mail</h3>
+                    <a href="cellosuiteno1@protonmail.com">Mail</a>
+                </div>
+                <div class="card">
+                    <h3>Github</h3>
+                    <a href="github.com/snowypainter">Github</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Lineari. All rights reserved.</p>
+    </footer>
+</body>
 </html>

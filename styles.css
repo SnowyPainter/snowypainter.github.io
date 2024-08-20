@@ -1,0 +1,234 @@
+/* 기본 스타일 */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f9f9f9;
+    --font-color: #333;
+    --background-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* 모서리를 둥글게 처리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 이미지에 그림자 추가 */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 20px;
+}
+
+.about, .services, .contacts {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about h2, .services h2, .contacts h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: grid;
+}
+/* 소개 섹션 */
+.intro {
+    background-color: var(--secondary-color);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 개요 섹션 */
+.overview {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.overview h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.overview ul {
+    list-style: none;
+    padding: 0;
+}
+
+.overview li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* 이점 섹션 */
+.advantages {
+    background-color: var(--secondary-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.advantage-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* 예시 섹션 스타일 */
+.examples {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.examples h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.example-item {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.example-item:hover {
+    transform: translateY(-5px);
+}
+
+.example-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.example-item p {
+    font-size: 1rem;
+}
+ul {
+    list-style-type: none; /* 기본 목록 아이콘 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+ul li {
+    padding: 10px 0; /* 아이템 간격 조절 */
+    border-bottom: 1px solid #e0e0e0; /* 하단 경계선 추가로 구분 */
+    display: flex;
+    align-items: center;
+}
+
+ul li:last-child {
+    border-bottom: none; /* 마지막 아이템 경계선 제거 */
+}
+
+/* 아이콘 스타일 */
+ul li::before {
+    content: "\2022"; /* 원형 아이콘 추가 */
+    color: var(--primary-color); /* 아이콘 색상 변경 (기본 색상으로 변경 가능) */
+    font-weight: bold; /* 아이콘 굵게 */
+    display: inline-block;
+    width: 1em;
+    margin-right: 10px; /* 텍스트와 아이콘 간의 간격 */
+    font-size: 1.2rem; /* 아이콘 크기 */
+}
+
+/* 텍스트 스타일 */
+ul li p {
+    margin: 0; /* 텍스트의 기본 마진 제거 */
+    font-size: 1rem; /* 텍스트 크기 */
+    color: #333; /* 텍스트 색상 */
+    line-height: 1.5; /* 줄 간격 */
+}

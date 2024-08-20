@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started Your Own AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Quant</div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#advantages">Advantages</a></li>
+                <li><a href="#examples">AIs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 소개 섹션 -->
+        <section class="intro">
+            <h1>Understanding Quant</h1>
+            <p>We recognize the need for quantitative trading and introduce AI that works.</p>
+        </section>
+
+        <!-- 개요 섹션 -->
+        <section id="overview" class="overview">
+            <h2>What are Quantitative Strategies?</h2>
+            <p>Quantitative strategies leverage mathematical models and statistical methods to make trading decisions. These strategies are based on historical data, algorithms, and various financial metrics to generate signals for trading.</p>
+            <ul>
+                <li><strong>Data-driven:</strong> Decisions are based on data analysis.</li>
+                <li><strong>Algorithmic:</strong> Strategies are often automated using algorithms.</li>
+                <li><strong>Objective:</strong> Removes emotional biases from trading.</li>
+            </ul>
+        </section>
+
+        <!-- 이점 섹션 -->
+        <section id="advantages" class="advantages">
+            <h2>Advantages of Quantitative Strategies</h2>
+            <div class="advantage-card">
+                <h3>Consistency</h3>
+                <p>Quant strategies offer consistent results by relying on historical data and objective analysis.</p>
+            </div>
+            <div class="advantage-card">
+                <h3>Speed</h3>
+                <p>Automated strategies can execute trades faster than any human trader, capturing opportunities in milliseconds.</p>
+            </div>
+            <div class="advantage-card">
+                <h3>Diversification</h3>
+                <p>Allows for the diversification of portfolios by creating strategies across different markets and asset classes.</p>
+            </div>
+        </section>
+
+        <!-- 예시 섹션 -->
+        <section id="examples" class="examples">
+            <h2>Financial AIs</h2>
+            <div class="example-grid">
+                <div class="example-item">
+                    <h3>Neo Strategy <button class="cta-button"><a href="https://github.com/SnowyPainter/fromisnine/releases/tag/PairTrader">Try it</a></button></h3>
+                    <p>It contains 3 models. Trend predictor, News reader, Price forecaster.</p>
+                    <p>Most decisions are basically controlled by models.</p>   
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>High prediction accuracy, achieving at least 58% success rate, and up to nearly 90% in optimal conditions.</li>
+                        <li>Improved returns, with maximum gains(in simulation) ranging from 19% to 25% and minimum losses improving from -9% to 0%.</li>
+                        <li>Enhanced Sharpe ratio, indicating better risk-adjusted returns.</li>
+                        <li>Stronger performance compared to MA breakthrough strategy.</li>
+                        <li>Overall better performance, with prediction accuracy over 55%, making it superior to not using it.</li>
+                    </ul>
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>Limited usefulness of price predictions alone; more effective when combined with trend forecasting.</li>
+                        <li>May not perform well for certain stock pairs, leading to suboptimal results.</li>
+                    </ul>
+
+                </div>
+                <div class="example-item">
+                    <h3>Compound Strategy <button class="cta-button"><a href="https://github.com/SnowyPainter/fromisnine/releases/tag/PairTrader">Try it</a></button></h3>
+                    <p>It works with only two mathematical models.</p>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>The CIR model provides a simulation of the initial asset price, which is crucial for generating trading signals based on the z-score between two assets.</li>
+                        <li>This strategy is particularly effective in capturing optimal trading moments in volatile financial markets.</li>
+                        <li>Pair trading allows for profit by adjusting the holding ratio between two stocks, potentially benefiting even when only one asset's value increases.</li>
+                        <li>The CIR model's price simulation, combined with z-score calculations, can gather signals for all possible future scenarios, enhancing the speed of adjusting asset weights in pair trading.</li>
+                        <li>Reduces the latency commonly associated with machine learning models and decreases trading costs by minimizing unnecessary signal adjustments.</li>
+                    </ul>
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>Relies on accurate asset price simulations, which may not always reflect real market conditions.</li>
+                        <li>Despite adjustments, achieving consistent accuracy above 90% for each asset using deep learning or time series models remains challenging.</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Lineari. All rights reserved.</p>
+    </footer>
+</body>
+</html>
