@@ -1,234 +1,365 @@
 /* 기본 스타일 */
 :root {
-    --primary-color: #4CAF50;
-    --secondary-color: #f9f9f9;
-    --font-color: #333;
-    --background-color: #ffffff;
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
 }
 
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-a {
+/* 카드 스타일 */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px; /* 모서리를 둥글게 처리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 이미지에 그림자 추가 */
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    color: var(--font-color);
-    background-color: var(--background-color);
-    line-height: 1.6;
-}
-
-header {
-    background-color: var(--primary-color);
+    color: var(--text-color);
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
+.language {
+    background-color: var(--secondary-color);
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
 }
 
-.cta-button {
-    background-color: white;
+.fab.fa-github {
+    font-size: 1.5em;
     color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.card:hover .fab.fa-github {
+    color: var(--secondary-color);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 컨테이너 스타일 수정 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* 컨테이너 내부 요소 사이의 간격 추가 */
+}
+
+/* h1 스타일 추가 */
+.container h1 {
+    margin-bottom: 20px; /* h1과 그 아래 요소 사이의 간격 추가 */
+}
+
+/* 하이라이트 컨테이너 스타일 */
+.highlight-container {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.highlight-container h2 {
+    margin-top: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* 버튼 스타일 */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.btn:hover {
     background-color: var(--secondary-color);
 }
 
-.hero {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
+/* 반응형 (모바일) */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .highlight-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
 }
 
-.hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    margin-bottom: 20px;
-}
-
-.about, .services, .contacts {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about h2, .services h2, .contacts h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.card-container {
-    display: grid;
-}
-/* 소개 섹션 */
-.intro {
-    background-color: var(--secondary-color);
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.intro p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* 개요 섹션 */
-.overview {
-    padding: 60px 20px;
-    background-color: var(--background-color);
-    text-align: center;
-}
-
-.overview h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.overview ul {
-    list-style: none;
-    padding: 0;
-}
-
-.overview li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-/* 이점 섹션 */
-.advantages {
-    background-color: var(--secondary-color);
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.advantage-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-/* 예시 섹션 스타일 */
-.examples {
-    padding: 60px 20px;
-    background-color: var(--background-color);
-    text-align: center;
-}
-
-.examples h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.example-grid {
+/* 프로젝트 그리드 스타일 수정 */
+.project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px; /* 그리드 내부 카드 사이의 간격 증가 */
 }
 
-.example-item {
-    background-color: var(--secondary-color);
-    padding: 20px;
+/* 반응형 스타일 수정 */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 애니메이션 지연 */
+.slide-in:nth-child(1) { animation-delay: 0.1s; }
+.slide-in:nth-child(2) { animation-delay: 0.2s; }
+.slide-in:nth-child(3) { animation-delay: 0.3s; }
+.slide-in:nth-child(4) { animation-delay: 0.4s; }
+.slide-in:nth-child(5) { animation-delay: 0.5s; }
+
+/* 자기소개 섹션 스타일 */
+.intro-section {
+    background-color: var(--card-background);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.example-item:hover {
-    transform: translateY(-5px);
-}
-
-.example-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.example-item p {
-    font-size: 1rem;
-}
-ul {
-    list-style-type: none; /* 기본 목록 아이콘 제거 */
-    padding: 0; /* 기본 패딩 제거 */
-    margin: 0; /* 기본 마진 제거 */
-}
-
-ul li {
-    padding: 10px 0; /* 아이템 간격 조절 */
-    border-bottom: 1px solid #e0e0e0; /* 하단 경계선 추가로 구분 */
+    padding: 20px;
+    margin-bottom: 30px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-text {
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 15px;
+    }
+
+    .intro-text p {
+        font-size: 14px;
+    }
+
+    .contact-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* 기존 스타일 유지 */
+
+/* 현재 프로젝트 섹션 스타일 */
+.current-project {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.current-project h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-ul li:last-child {
-    border-bottom: none; /* 마지막 아이템 경계선 제거 */
+.project-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* 아이콘 스타일 */
-ul li::before {
-    content: "\2022"; /* 원형 아이콘 추가 */
-    color: var(--primary-color); /* 아이콘 색상 변경 (기본 색상으로 변경 가능) */
-    font-weight: bold; /* 아이콘 굵게 */
-    display: inline-block;
-    width: 1em;
-    margin-right: 10px; /* 텍스트와 아이콘 간의 간격 */
-    font-size: 1.2rem; /* 아이콘 크기 */
+.project-images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* 텍스트 스타일 */
-ul li p {
-    margin: 0; /* 텍스트의 기본 마진 제거 */
-    font-size: 1rem; /* 텍스트 크기 */
-    color: #333; /* 텍스트 색상 */
-    line-height: 1.5; /* 줄 간격 */
+.project-images img:hover {
+    transform: scale(1.05);
+}
+
+.project-info p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .current-project {
+        padding: 15px;
+    }
+
+    .project-images img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+    }
+}
+
+/* 프로그레스 바 스타일 */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 60%;
+    height: 20px;
+    background-color: var(--primary-color);
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.5s ease-in-out;
+}
+
+/* 반응형 스타일 수정 */
+@media (max-width: 768px) {
+    .progress {
+        height: 15px;
+        line-height: 15px;
+        font-size: 12px;
+    }
+}
+
+/* YouTube 동영상 컨테이너 스타일 수정 */
+.video-container {
+    position: relative;
+    width: 80%; /* 전체 너비의 80%로 유지 */
+    max-width: 560px; /* 최대 너비 유지 */
+    height: 0; /* 높이를 0으로 설정하고 패딩으로 조절 */
+    padding-bottom: 36%; /* 16:9 비율의 80%로 조정 (45% * 0.8) */
+    margin: 0 auto 20px; /* 중앙 정렬 및 하단 여백 유지 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* 반응형 스타일 수정 */
+@media (max-width: 768px) {
+    .video-container {
+        width: 100%; /* 모바일에서는 전체 너비 사용 */
+        padding-bottom: 56.25%; /* 16:9 비율 유지 */
+    }
 }

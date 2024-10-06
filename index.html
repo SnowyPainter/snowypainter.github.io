@@ -1,91 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINEARI</title>
+    <title>SnowyPainter의 프로젝트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">LINEARI</div>
-            <ul class="nav-links">
-                <li><a href="./warn.html">Warning</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="cta-button"><a href="./quant_services.html">Quant Strategies</a></button>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Lineari</h1>
-                <p>We provide financial AI services.</p>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>We are R&D group about financial AIs.</p>
-            <p>We research KRX market.</p>
-        </section>
-
-        <section id="services" class="services">
-            <h2>Our Products</h2>
-            <p>Windows/Linux apps and AI</p>
-            <div class="card-container">
-                <section id="examples" class="examples">
-                    <div class="example-grid">
-                        <div class="example-item">
-                            <h3>Zerg <button class="cta-button"><a href="https://github.com/SnowyPainter/Zerg/releases/tag/1">Try it</a></button></h3>
-                            <p>For teachers in south korea, Teacher Training Program is inefficiency to do other works.</p>
-                            <p>It solves Quiz, Going to Next problem.</p>
-                        </div>
-                        <div class="example-item">
-                            <input id="PairTraderVersion" type="hidden" text="0.0101"/>
-                            <h3>PairTrader.exe <button class="cta-button"><a href="https://github.com/SnowyPainter/fromisnine/releases/tag/PairTrader">Try it</a></button></h3>
-                            <p>So far, Neo/Compound strategies have been built in.</p>
-                            <p>It trades automatically with decisions by AI or Math models.</p>
-                            <img src="./resources/pt.png">
-                        </div>
-                        <div class="example-item">
-                            <h3>Research on 'How to make less trade cost in one trade'</h3>
-                            <p>Pair trading strategy that reduces volatility drop using CIR model and z-score calculation</p>
-                        </div>
-                        <div class="example-item">
-                            <h3>Research on 'Finding perfect buy/sell timing when stocks rises'</h3>
-                            <p>Technical analysis and quantitative approach to stocks with 52-week highs</p>
-                        </div>
-                        <div class="example-item">
-                            <h3>Research on 'How to solve slippage problem'</h3>
-                            <p>Solving slippage problems using probability density functions</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </section>
-
-        <section id="contact" class="contacts">
-            <h2>Contact Us</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>Mail</h3>
-                    <a href="cellosuiteno1@protonmail.com">Mail</a>
+    <div class="container">
+        <div class="current-project fade-in">
+            <h2><i class="fas fa-project-diagram"></i> 현재 진행 중인 프로젝트: <strong>PairWork</strong></h2>
+            <div class="project-info">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d9e7id9JhSc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="card">
-                    <h3>Github</h3>
-                    <a href="github.com/snowypainter">Github</a>
+                <p><i class="fas fa-lightbulb"></i> <strong>누구나 정교하게 만들어진 금융 AI와 수학 모델로 퀀트 트레이딩을 쉽게할 수 있습니다.</strong> 현재까지 마련된 <strong>2개의 페어트레이딩 전략</strong>과 <strong>1개의 극대/극소 전략</strong>을 이용하여 의견을 듣고 투자를 진행해볼 수 있습니다.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"><i class="fas fa-tasks"></i> 60%</div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 Lineari. All rights reserved.</p>
-    </footer>
+        </div>
+        <div class="intro-section fade-in">
+            <div class="intro-text">
+                <p lang="en"><i class="fas fa-globe"></i> <strong>I'm a developer creating financial AI to revolutionize quantitative trading and market analysis. Let's innovate together!</strong></p>
+                <p lang="ko"><i class="fas fa-code"></i> <strong>금융 AI를 만들어 퀀트 트레이딩과 시장 분석에 혁신을 가져오는 개발자입니다. 함께 혁신해요!</strong></p>
+            </div>
+            <a href="mailto:snowypainter@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> snowypainter@gmail.com</a>
+        </div>
+        <h1 class="fade-in"><i class="fas fa-thumbtack"></i> Pin</h1>
+        <div class="project-grid">
+            <a href="https://github.com/SnowyPainter/3axis-hedge" class="card slide-in" target="_blank" rel="noopener noreferrer">
+                <h2><i class="fas fa-chart-line"></i> 3axis-hedge</h2>
+                <p><strong>Hedge with only three stocks.</strong></p>
+                <div class="card-footer">
+                    <span class="language">Python</span>
+                    <i class="fab fa-github"></i>
+                </div>
+            </a>
+            <a href="https://github.com/SnowyPainter/refactored-engine" class="card slide-in" target="_blank" rel="noopener noreferrer">
+                <h2><i class="fas fa-cogs"></i> refactored-engine</h2>
+                <p><strong>선물 지수와 주가의 상관 관계에 대한 연구와 분석</strong></p>
+                <div class="card-footer">
+                    <span class="language">Python</span>
+                    <i class="fab fa-github"></i>
+                </div>
+            </a>
+            <a href="https://github.com/SnowyPainter/Zerg" class="card slide-in" target="_blank" rel="noopener noreferrer">
+                <h2><i class="fas fa-graduation-cap"></i> Zerg</h2>
+                <p><strong>대한민국 교직원을 위한 연수 자동 넘기기 프로그램</strong></p>
+                <div class="card-footer">
+                    <span class="language">Python</span>
+                    <i class="fab fa-github"></i>
+                </div>
+            </a>
+            <a href="https://github.com/SnowyPainter/Solar-System" class="card slide-in" target="_blank" rel="noopener noreferrer">
+                <h2><i class="fas fa-sun"></i> Solar-System</h2>
+                <p><strong>초등 저학년 교육용 태양계 시뮬레이션</strong></p>
+                <div class="card-footer">
+                    <span class="language">C++</span>
+                    <i class="fab fa-github"></i>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
