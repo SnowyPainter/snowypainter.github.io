@@ -1,12 +1,23 @@
 /* 기본 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --card-background: #ffffff;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-color: #3cc1e6;
+    --accent-hover: #2a95b3;
+    --error-color: #ff6b6b;
+    --success-color: #4ecdc4;
+    --primary-color: var(--accent-color);
+    --secondary-color: var(--accent-hover);
+    --text-color: var(--text-primary);
+    --background-color: var(--bg-primary);
+    --card-background: var(--bg-secondary);
 }
 
+/* 기본 스타일 */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
@@ -16,297 +27,60 @@ body {
     padding: 0;
 }
 
-/* 카드 스타일 */
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    text-decoration: none;
-    color: var(--text-color);
-    background-color: var(--card-background);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card h2 {
-    margin-top: 0;
-    color: var(--primary-color);
-    font-size: 1.5em;
-}
-
-.card p {
-    flex-grow: 1;
-    margin-bottom: 15px;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.language {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8em;
-}
-
-.fab.fa-github {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-}
-
-.card:hover .fab.fa-github {
-    color: var(--secondary-color);
-}
-
-/* 애니메이션 */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* 컨테이너 스타일 수정 */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* 컨테이너 내부 요소 사이의 간격 추가 */
-}
-
-/* h1 스타일 추가 */
-.container h1 {
-    margin-bottom: 20px; /* h1과 그 아래 요소 사이의 간격 추가 */
-}
-
-/* 하이라이트 컨테이너 스타일 */
-.highlight-container {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.highlight-container h2 {
-    margin-top: 0;
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.slide-in {
-    animation: slideIn 0.5s ease-out;
-}
-
-/* 버튼 스타일 */
-.btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-}
-
-/* 반응형 (모바일) */
-@media (max-width: 768px) {
-    .card {
-        margin: 10px 0;
-        padding: 15px;
-    }
-
-    body {
-        font-size: 14px;
-    }
-
-    .btn {
-        padding: 8px 16px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .highlight-container {
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-}
-
-/* 프로젝트 그리드 스타일 수정 */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px; /* 그리드 내부 카드 사이의 간격 증가 */
-}
-
-/* 반응형 스타일 수정 */
-@media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* 애니메이션 지연 */
-.slide-in:nth-child(1) { animation-delay: 0.1s; }
-.slide-in:nth-child(2) { animation-delay: 0.2s; }
-.slide-in:nth-child(3) { animation-delay: 0.3s; }
-.slide-in:nth-child(4) { animation-delay: 0.4s; }
-.slide-in:nth-child(5) { animation-delay: 0.5s; }
-
-/* 자기소개 섹션 스타일 */
-.intro-section {
+/* 판매 섹션 스타일 */
+.sales-section {
     background-color: var(--card-background);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
-.intro-text {
-    margin-bottom: 20px;
-}
-
-.intro-text p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.contact-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-    .intro-section {
-        padding: 15px;
-    }
-
-    .intro-text p {
-        font-size: 14px;
-    }
-
-    .contact-button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-}
-
-/* 기존 스타일 유지 */
-
-/* 현재 프로젝트 섹션 스타일 */
-.current-project {
-    background-color: var(--card-background);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-.current-project h2 {
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.project-info {
+.sales-options {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project-images {
-    display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 20px; /* 판매 옵션 사이의 간격 */
 }
 
-.project-images img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+.sales-option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     border-radius: 8px;
+    padding: 15px;
+    padding-bottom: 2rem;
+    flex: 1 1 200px; /* 최소 너비 200px */
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.project-images img:hover {
+.sales-option .btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sales-option .btn:hover {
+    background-color: var(--accent-hover);
     transform: scale(1.05);
 }
 
-.project-info p {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+.sales-option:hover {
+    transform: translateY(-5px);
 }
 
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-    .current-project {
-        padding: 15px;
-    }
+.sales-option h3 {
+    margin: 0 0 10px;
+}
 
-    .project-images img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .project-info p {
-        font-size: 14px;
-    }
+.sales-option p {
+    margin: 0 0 15px;
 }
 
 /* 프로그레스 바 스타일 */
@@ -362,4 +136,60 @@ body {
         width: 100%; /* 모바일에서는 전체 너비 사용 */
         padding-bottom: 56.25%; /* 16:9 비율 유지 */
     }
+}
+
+/* 현재 프로젝트 섹션 스타일 */
+.current-project {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.current-project h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.current-project p {
+    margin: 10px 0;
+}
+
+/* 소개 섹션 스타일 */
+.intro-section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-text {
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--secondary-color);
 }
